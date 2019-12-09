@@ -1,0 +1,135 @@
+@media print {
+    .tm-sidebar {
+        display: none;
+    }
+    .tm-team-description-container {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+    .tm-team-img {
+        display: none;
+    }
+}
+
+@media screen {
+    .tm-sidebar,
+    .tm-content-box, .blocks  {
+        box-shadow: 0 0 10px 2px #808080;
+    }
+
+    #home+section .tm-content-box {
+        box-shadow: none;
+    }
+
+    .blocks .tm-content-box {
+        box-shadow: none;
+    }
+
+
+
+    #home+section {
+        box-shadow: 0 0 10px 2px #808080;
+
+    }
+    #home .tm-banner {
+        background: rgb(20,236,245);
+        background: linear-gradient(90deg, lightskyblue, burlywood);
+    }
+    .tm-banner-inner {
+        background-color: #fff;
+    }
+
+    .padding-medium.flex-item.tm-team-description-container.flex-item {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+    .tm-content-box.flex-2-col {
+        display: flex;
+    }
+
+    .tm-content-box.flex-2-col::after {
+        background-image: black;
+        height: 30px;
+        width: 100%;
+        display: block;
+    }
+    .tm-section-description {
+        text-indent: 1.5em;
+    }
+
+    section {
+        position: relative;
+    }
+
+    section::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        border-top: 2em solid lightskyblue;
+        border-right: 2em solid transparent;
+        z-index: 1;
+    }
+
+    .box.box-work:nth-child(odd) {
+        background-color: lightskyblue;
+    }
+
+    section.blocks .box {
+        padding: 10px 10px;
+    }
+
+    .blocks div:nth-child(2) {
+        box-shadow: none;
+    }
+
+    .text {
+        position: relative;
+    }
+
+    .text::after {
+        content: "New";
+        position: absolute;
+        top: 0;
+        color: #FF0000;
+        font-size: 10px;
+    }
+
+    ol {
+        list-style-type: lower-latin;
+    }
+
+    .blocks .tm-team-description-container .tm-section-description:last-child{
+        letter-spacing: 7px;
+        font-style: italic;
+    }
+    input[type=text],input[type=email] {
+        background: transparent;
+        border: none;
+        border-bottom: 1px solid lightskyblue;
+    }
+    #contact_message {
+        background: transparent;
+        border: 1px solid lightskyblue;
+    }
+    .submit-btn {
+        background-color: #fff;
+        border-color: lightskyblue;
+        color: #6bdcff;
+        height: 75px;
+        width: 130px;
+        border-radius: 5px;
+        float: right;
+    }
+
+    .gallery-container p {
+        font-style: italic;
+    }
+    .gallery-container p::first-letter {
+        /*color: #87CEFA;*/
+        font-weight: bold;
+    }
+}
