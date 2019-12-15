@@ -1,0 +1,246 @@
+@mixin button {
+  height: 48px;
+  width: 140px;
+  background-color: $color_button;
+  color: white;
+  font-family: $fontHind;
+  font-size: 18px;
+  border: none;
+  border-radius: 2px;
+}
+@mixin text_sect {
+  font-family: $fontHind;
+  color: white;
+}
+@mixin text {
+  margin: -1px 16px;
+  display: flex;
+  flex-direction: column;
+  font-weight: bold;
+  font-size: 23px;
+  font-family: $fontSans;
+  color: $color_text1;
+  span {
+    font-weight: normal;
+    font-size: 8px;
+    text-align: center;
+    margin-top: 3px;
+    font-family: $fontSans;
+    color: $color_text1;
+  }
+}
+@mixin header_b() {
+  margin-left: map-get($pos_b, "$footer-btn-left");
+  margin-top: map-get($pos_b, "$footer-btn-top");
+}
+@mixin footer_b() {
+  margin-left: map-get($pos_b, "$header-btn-left");
+  margin-top: map-get($pos_b, "$header-btn-top");
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0 auto;
+  background-color: $main_bg;
+  z-index: 0;
+  .header {
+    height: 719px;
+    background: $header_bg;
+    background-size: 100%;
+    border-radius: 0 0 778px/282px 0;
+    .header-wrap {
+      margin: 21px 193px;
+      .header_heading {
+        margin-top: 74px;
+        margin-bottom: 36px;
+        line-height: 72px;
+        font-size: 72px;
+        width: 504px;
+        font-family: $fontSans;
+        font-weight: bolder;
+        position: relative;
+        color: $color_text1;
+      }
+      .header_heading:before {
+        content: 'awesome';
+        position: absolute;
+        top: 83px;
+        line-height: 0.7;
+        background-color: $highlight;
+        color: $color_text1;
+      }
+      .header_text {
+        font-family: $fontHind;
+        word-spacing: 1.05px;
+        line-height: 24px;
+        white-space: pre-line;
+        margin: 0;
+        color: $color_text1;
+      }
+      div {
+        button.header_button {
+          @include button;
+          @include footer_b;
+        }
+        a.login {
+          margin-left: 150px;
+          font-size: 19px;
+          @include text_sect;
+        }
+      }
+    }
+  }
+  .landing-logo {
+    display: flex;
+    flex-direction: row;
+    color: $color_text2;
+    img {
+      width: 45px;
+      height: 45px;
+    }
+    p {
+      @include text;
+    }
+  }
+  .section {
+    display: flex;
+    flex-direction: column;
+    width: 1114px;
+    margin: 0 402px 0 402px;
+    position: relative;
+    .section_text {
+      text-align: center;
+      margin: 39px auto 38px auto;
+      font-family: $fontSans;
+      font-size: 41px;
+      position: relative;
+      color: $color_text1;
+    }
+    .section_text:before {
+      content: 'adventure';
+      background-color: $highlight;
+      position: absolute;
+      left: 209px;
+    }
+    .section_card_wrap {
+      .section_card {
+        display: flex;
+        flex-direction: row;
+        border-radius: 6px;
+        background-color: $card_bg;
+        color: white;
+        margin-bottom: 25px;
+        height: 325px;
+        .section_card_img {
+          margin: 18px;
+          width: 432px;
+          display: block;
+          border-radius: 6px;
+        }
+        .section_card_right_container {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          width: 494px;
+          margin-left: 61px;
+          .section_card_heading {
+            font-family: $fontSans;
+            font-size: 26px;
+            margin-left: -83px;
+            margin-top: 67px;
+          }
+          .section_card_text {
+            margin-left: 10px;
+            margin-top: 13px;
+            font-family: $fontHind;
+          }
+          .section_link {
+            @include text_sect;
+          }
+        }
+      }
+    }
+    .section_banner {
+      background: $banner_bg;
+      border-radius: 5px;
+      width: 1198px;
+      height: 143px;
+      margin-left: -41px;
+      margin-top: 125px;
+      display: flex;
+      flex-direction: row;
+      z-index: 99;
+      .section_banner_text_wrap {
+        margin-left: 161px;
+        .section_banner_heading {
+          margin-top: 12px;
+          padding-top: 12px;
+          font-weight: bold;
+          font-size: 30px;
+          font-family: $fontSans;
+          position: relative;
+          color: $color_text1;
+        }
+        .section_banner_heading:before {
+          content: "start";
+          line-height: 1.2em;
+          position: absolute;
+          top: 12px;
+          left: 122px;
+          background-color: $highlight;
+        }
+        .section_banner_text {
+          font-family: $fontHind;
+          color: white;
+          margin-top: -14px;
+        }
+      }
+      .section_banner_button {
+        @include button;
+        @include header_b;
+      }
+    }
+  }
+  .section:after {
+    position: absolute;
+    content: '';
+    width: auto;
+    height: 74px;
+    background-color: $card_bg;
+    bottom: 0;
+    left: -402px;
+    z-index: 98;
+  }
+  .footer {
+    width: auto;
+    .footer-wrap {
+      display: flex;
+      flex-direction: row;
+      background-color: $card_bg;
+      .footer_logo.landing-logo {
+        margin-left: 193px;
+        margin-top: 64px;
+        @extend .landing-logo;
+      }
+      .footer_text {
+        color: white;
+        font-family: $fontHind;
+        font-size: 14px;
+        width: 291px;
+        margin-top: 56px;
+        margin-left: 439px;
+        line-height: 20px;
+        padding-bottom: 58px;
+      }
+      .footer-cr {
+        color: white;
+        font-family: $fontHind;
+        font-size: 16px;
+        margin-left: 470px;
+        margin-top: 71px;
+      }
+    }
+  }
+}
