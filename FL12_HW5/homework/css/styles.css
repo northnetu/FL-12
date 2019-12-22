@@ -215,15 +215,15 @@ body {
     .header-cover h1 {
         font-size: 24px;
     }
-    article h2, .post-date p {
-        font-size: 32px;
-    }
     .header-post {
         height: 40vh;
     }
     .header-post .post-desc {
         margin: 0 0 3% 3%;
         width: 70%;
+    }
+    article h2, .post-date p {
+        font-size: 32px;
     }
     .cover {
         flex-direction: row;
